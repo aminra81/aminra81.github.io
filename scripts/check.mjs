@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {readFile,access} from 'node:fs/promises';
+import {readFile,stat} from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
@@ -14,8 +14,8 @@ for(const p of papers){
   assert(new URL(p.pdfUrl).protocol==='https:',`Invalid PDF URL: ${p.id}`);
   assert((await read(`assets/bib/${p.id}.bib`)).startsWith('@'),`Invalid BibTeX: ${p.id}`);
 }
-const pages=['index.html','publications.html','cv.html','misc.html'];
-for(const page of pages){
+const pages=[['index.html','/'],['publications/index.html','/publications/'],['cv/index.html','/cv/'],['misc/index.html','/misc/']];
+for(const [page,route] of pages){
   const html=await read(page);
   assert.equal((html.match(/<h1[ >]/g)||[]).length,1,`Expected one h1: ${page}`);
   assert(html.includes('aria-current="page"'),`Missing active navigation: ${page}`);
@@ -24,14 +24,14 @@ for(const page of pages){
   for(const [,raw] of html.matchAll(/(?:href|src|data)="([^"]+)"/g)){
     const url=raw.replaceAll('&amp;','&');
     if(/^(https?:|mailto:)/.test(url))continue;
-    const [resource,hash]=url.split('#');
-    const file=resource.split('?')[0];
-    const target=file||page;
-    await access(path.join(root,target));
-    if(hash&&target.endsWith('.html'))assert((await read(target)).includes(`id="${hash}"`),`Broken fragment ${url} in ${page}`);
+    const resolved=new URL(url,'https://example.test'+route);
+    assert(!resolved.pathname.endsWith('.html'),`Visible link still uses .html: ${url} in ${page}`);
+    let target=path.join(root,decodeURIComponent(resolved.pathname).replace(/^\/+/,''));
+    if((await stat(target)).isDirectory())target=path.join(target,'index.html');
+    if(resolved.hash&&target.endsWith('.html'))assert((await readFile(target,'utf8')).includes(`id="${decodeURIComponent(resolved.hash.slice(1))}"`),`Broken fragment ${url} in ${page}`);
   }
 }
-const pub=await read('publications.html');
+const pub=await read('publications/index.html');
 assert.equal((pub.match(/<details>/g)||[]).length,papers.length,'Missing expandable abstracts');
 assert((await readFile(path.join(root,'assets/cv.pdf'))).subarray(0,5).toString()==='%PDF-','CV is not a PDF');
 for(const tag of ['Cryptography','AI','Algorithms','Systems'])assert(papers.some(p=>p.tags.includes(tag)),`Empty topic filter: ${tag}`);

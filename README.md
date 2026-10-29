@@ -20,6 +20,8 @@ node scripts/check.mjs
 
 Commit the regenerated HTML and bibliography with the content edits. GitHub Pages can serve the committed files directly. The website still works without JavaScript; JavaScript adds publication search, topic filters, and the mobile menu.
 
+The public routes are `/`, `/publications/`, `/cv/`, and `/misc/`. Each section is served by an `index.html` inside its directory. The old `/publications.html`, `/cv.html`, and `/misc.html` URLs redirect to the corresponding clean routes and retain query strings and paper anchors. Explicit `index.html` visits are normalized in the address bar by the shared script.
+
 ## Preview locally
 
 ```sh

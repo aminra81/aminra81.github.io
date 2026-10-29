@@ -1,3 +1,7 @@
+// Keep explicit index.html visits at the same clean URL used by navigation.
+if (location.pathname.endsWith('/index.html')) {
+  history.replaceState(null, '', location.pathname.slice(0, -10) + location.search + location.hash);
+}
 document.documentElement.classList.add('js');
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#navigation');
