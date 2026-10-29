@@ -1,51 +1,43 @@
-# Academic Pages
+# Mohammad Amin Raeisi — personal homepage
 
-![pages-build-deployment](https://github.com/academicpages/academicpages.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
+A dark academic homepage for **aminra81.github.io**, with About, Publications, CV, and Misc pages. Plain HTML, CSS, and JavaScript; no package installation or framework is required. This version is being proposed on a draft branch, so it does not change the live site until merged and deployed.
 
-Academic Pages is a Github Pages template for academic websites.
+## Edit the content
 
-# Getting Started
+- `content/site.json`: biography, social links, education, teaching, service, and Misc entries.
+- `content/publications.json`: paper titles, authors, venues, links, abstract summaries, and BibTeX. Use `abstractType: "full"` when replacing a summary with the full author-provided abstract.
+- `assets/portrait.jpg`: profile photograph.
+- `assets/cv.pdf`: downloadable and embedded CV. `assets/cv.tex` is the corresponding editable source.
+- `assets/style.css`: colors, typography, and responsive layout.
+- `scripts/build.mjs`: shared page markup and templates.
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Click the "Use this template" button in the top right.
-1. On the "New repository" page, enter your repository name as "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and add your content.
-1. Upload any files (like PDFs, .zip files, etc.) to the `files/` directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+After content changes, regenerate the HTML and bibliography from the repository root:
 
-See more info at https://academicpages.github.io/
+```sh
+node scripts/build.mjs
+node scripts/check.mjs
+```
 
-## Running Locally
+Commit the regenerated HTML and bibliography with the content edits. GitHub Pages can serve the committed files directly. The website still works without JavaScript; JavaScript adds publication search, topic filters, and the mobile menu.
 
-When you are initially working your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
+## Preview locally
 
-1. Clone the repository and made updates as detailed above.
-1. Make sure you have ruby-dev, bundler, and nodejs installed
-    
-    On most Linux distribution and [Windows Subsystem Linux](https://learn.microsoft.com/en-us/windows/wsl/about) the command is:
-    ```bash
-    sudo apt install ruby-dev ruby-bundler nodejs
-    ```
-    On MacOS the commands are:
-    ```bash
-    brew install ruby
-    brew install node
-    gem install bundler
-    ```
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
+```sh
+node scripts/serve.mjs
+```
 
-If you are running on Linux it may be necessary to install some additional dependencies prior to being able to run locally: `sudo apt install build-essential gcc make`
+Open `http://localhost:4173`. Stop the server with Ctrl+C.
 
-# Maintenance
+## Publish when ready
 
-Bug reports and feature requests to the template should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
+Review the draft pull request and merge it into `master` when you want the redesign to go live. In the repository’s **Settings → Pages**, select **Deploy from a branch**, the `master` branch, and **/ (root)** if that is not already the selected source. `.nojekyll` makes GitHub Pages serve the plain static pages. The public address is `https://aminra81.github.io/`.
 
-This repository was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License (see LICENSE.md). It is currently being maintained by [Robert Zupko](https://github.com/rjzupkoii) and additional maintainers would be welcomed.
+The previous Academic Pages/Jekyll files are preserved in the repository history and in this draft’s base tree. The new static homepage uses its own HTML and assets.
 
-## Bugfixes and enhancements
+## Notes
 
-If you have bugfixes and enhancements that you would like to submit as a pull request, you will need to [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) this repository as opposed to using it as a template. This will also allow you to [synchronize your copy](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) of template to your fork as well.
+Publication metadata was checked against primary paper sources on 2026-10-29. Expandable text is labeled as a research/abstract summary; the linked papers contain the complete abstracts. Source URLs and verification notes are retained in `content/publications.json`. No personal hobbies, advisor names, or teaching dates have been invented.
 
-Unfortunately, one logistical issue with a template theme like Academic Pages that makes it a little tricky to get bug fixes and updates to the core theme. If you use this template and customize it, you will probably get merge conflicts if you attempt to synchronize. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch.
+The CV PDF was compiled from the current Overleaf resume, including the Yale Teaching Fellow entry. The website’s LaTeX copy uses an equivalent TeX accent for the character ć to ensure it renders with the local compiler. The original Overleaf source is maintained separately.
+
+Typography uses DM Sans and Manrope from Google Fonts with system fallbacks, plus the locally available Georgia serif. There are no analytics, cookies, external JavaScript libraries, or backend services.
