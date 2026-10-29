@@ -5,7 +5,7 @@ A dark navy academic homepage for **aminra81.github.io**, with About, Publicatio
 ## Edit the content
 
 - `content/site.json`: biography, social links, education, teaching, service, and Misc entries.
-- `content/publications.json`: paper titles, authors, venues, links, abstract summaries, and BibTeX. Use `abstractType: "full"` when replacing a summary with the full author-provided abstract.
+- `content/publications.json`: paper titles, authors, venues, links, original abstracts, and BibTeX. Mathematical expressions are stored as TeX between `$` delimiters and rendered as native MathML. `abstractSourceUrl` records the source PDF for each abstract.
 - `assets/portrait.jpg`: profile photograph.
 - `assets/cv.pdf`: CV opened directly on the CV page, with one button to open the original PDF in a new tab for download. `assets/cv.tex` is the corresponding editable source.
 - `assets/style.css`: colors, typography, and responsive layout.
@@ -38,7 +38,7 @@ The previous Academic Pages/Jekyll files are preserved in the repository history
 
 ## Notes
 
-Publication metadata was checked against primary paper sources on 2026-10-29. Expandable text is labeled as a research/abstract summary; the linked papers contain the complete abstracts. Source URLs and verification notes are retained in `content/publications.json`. No personal hobbies, advisor names, or teaching dates have been invented.
+Publication metadata was checked against primary paper sources on 2026-10-29. Expandable panels contain the original paper abstracts, with PDF line wrapping and ligatures normalized. The wording was checked against the source PDFs; mathematical notation is typeset as MathML. Source URLs and verification notes are retained in `content/publications.json`. The Misc page currently displays a centered TBD and clock symbol.
 
 The CV PDF was compiled from the current Overleaf resume, including the Yale Teaching Fellow entry. The website’s LaTeX copy uses an equivalent TeX accent for the character ć to ensure it renders with the local compiler. The original Overleaf source is maintained separately.
 

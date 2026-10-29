@@ -10,7 +10,7 @@
   "verifiedOn": "2026-10-29",
   "notes": [
     "The Google Scholar profile is explicitly linked by the matching alphaXiv profile; direct Scholar retrieval was unavailable.",
-    "The expandable abstract text below is a paraphrased summary grounded in each paper's author-provided abstract. Display it as Abstract summary, rather than as a verbatim abstract.",
+    "Abstracts reproduce the original paper wording, with PDF line wrapping and ligatures normalized. Mathematical expressions are stored as TeX and typeset as native MathML on the website.",
     "Maverick's In submission status and the equal-contribution notes are taken from the user's current resume. Publication titles, author lists, years and venues were checked against the linked primary sources.",
     "The IACR article's formal volume year is 2024, even though some indexes show an online date in 2025."
   ],
@@ -32,8 +32,8 @@
       "paperUrl": "https://arxiv.org/abs/2609.10264",
       "pdfUrl": "https://arxiv.org/pdf/2609.10264",
       "sourceUrl": "https://arxiv.org/abs/2609.10264",
-      "abstractType": "summary",
-      "abstract": "Maverick enables a resource-limited client to delegate the expensive matrix–vector operations in large language model inference while protecting inputs and checking results. Its verification protocol offers information-theoretic soundness, transparent preprocessing, efficient batch checks, and negligible added server work. LPN-based pseudorandom masks provide input privacy. An end-to-end Qwen3-4B prototype measures the resulting throughput gains across client configurations. With one client thread, the reported speedups over local inference reach 17× with online mask generation, 45× with precomputed masks, and 44× for verification alone.",
+      "abstractType": "full",
+      "abstract": "Open-source large language models (LLMs) are increasingly competitive with closed-source models while offering transparency and the ability to run inference without exposing user inputs to a service provider. However, running large-scale models locally requires substantial computational resources. In practice, users may still resort to a third-party provider, giving rise to privacy and correctness concerns. Existing solutions that address these problems often impose substantial server overhead or introduce additional trust assumptions.\n\nIn this paper, we present Maverick, a novel approach to private and verifiable LLM inference based on a protocol for delegating matrix–vector multiplication, a dominant operation in LLMs. At its core, Maverick provides, to our knowledge, the first information-theoretically sound verification protocol for matrix–vector multiplication delegation with transparent preprocessing, efficient (batch) verification, and virtually no server overhead. We combine this verification primitive with LPN-based pseudorandom masking to provide input privacy.\n\nWe implement our matrix–vector delegation primitive and use it to build an end-to-end prototype of Maverick, which we evaluate on Qwen3-4B by measuring throughput in tokens per second. We evaluate client configurations with 1–8 threads. With one client thread and a CPU server using up to 128 threads, Maverick achieves throughput gains over local inference of up to 17× when privacy masks are generated online, 45× when they are precomputed, and 44× when only verification is required. With four client threads, the corresponding gains are 13×, 18×, and 17×. When server computation is no longer the bottleneck, client-side microbenchmarks with simulated network delay show speedups of 12×–20×, 34×–135×, and 38×–157×.",
       "tags": [
         "Cryptography",
         "AI",
@@ -44,7 +44,8 @@
         "Mohammad Amin Raeisi"
       ],
       "contributionNote": "Co-first authors, alphabetical order.",
-      "bibtex": "@misc{merbaum2026maverick,\n  title={Maverick: Private and Verifiable LLM Inference Made Practical via Matrix-Vector Multiplication Delegation},\n  author={Merbaum, Ben and Raeisi, Mohammad Amin and Wang, Wenhao and Papamanthou, Charalampos and Sotiraki, Katerina and Zhang, Fan},\n  year={2026},\n  eprint={2609.10264},\n  archivePrefix={arXiv},\n  primaryClass={cs.CR},\n  url={https://arxiv.org/abs/2609.10264}\n}"
+      "bibtex": "@misc{merbaum2026maverick,\n  title={Maverick: Private and Verifiable LLM Inference Made Practical via Matrix-Vector Multiplication Delegation},\n  author={Merbaum, Ben and Raeisi, Mohammad Amin and Wang, Wenhao and Papamanthou, Charalampos and Sotiraki, Katerina and Zhang, Fan},\n  year={2026},\n  eprint={2609.10264},\n  archivePrefix={arXiv},\n  primaryClass={cs.CR},\n  url={https://arxiv.org/abs/2609.10264}\n}",
+      "abstractSourceUrl": "https://arxiv.org/pdf/2609.10264"
     },
     {
       "id": "trip",
@@ -71,14 +72,15 @@
       "pdfUrl": "https://www.cydcampus.admin.ch/dam/en/sd-web/zfXK8IOdglF5/3731569.3764837.pdf",
       "codeUrl": "https://github.com/dedis/votegral",
       "sourceUrl": "https://www.cydcampus.admin.ch/dam/en/sd-web/zfXK8IOdglF5/3731569.3764837.pdf",
-      "abstractType": "summary",
-      "abstract": "TRIP is the registration component of Votegral, an online voting architecture designed to resist coercion while remaining verifiable and usable. During in-person registration, a voter privately obtains genuine and fake paper credentials from a kiosk. The voter can distinguish them inside the booth, while a coercer cannot distinguish them afterward. Interactive zero-knowledge proofs support credential verification without requiring voters to understand the cryptography. The prototype, usability study, and formal analysis examine practicality, verifiability, and coercion resistance; credential issuance takes at most 19.7 seconds on the tested resource-constrained kiosks.",
+      "abstractType": "full",
+      "abstract": "Online voting is convenient and flexible, but amplifies the risks of voter coercion and vote buying. One promising mitigation strategy enables voters to give a coercer fake voting credentials, which silently cast votes that do not count. Current systems along these lines make problematic assumptions about credential issuance, however, such as strong trust in a registrar and/or in voter-controlled hardware, or expecting voters to interact with multiple registrars. Votegral is the first coercion-resistant voting architecture that leverages the physical security of in-person registration to address these credential-issuance challenges, amortizing the convenience costs of in-person registration by reusing credentials across successive elections. Votegral’s registration component, TRIP, gives voters a kiosk in a privacy booth with which to print real and fake credentials on paper, eliminating dependence on trusted hardware in credential issuance. The voter learns and can verify in the privacy booth which credential is real, but real and fake credentials thereafter appear indistinguishable to others. Only voters actually under coercion, a hopefully-rare case, need to trust the kiosk. To achieve verifiability, each paper credential encodes an interactive zero-knowledge proof, which is sound in real credentials but unsound in fake credentials. Voters observe the difference in the order of printing steps, but need not understand the technical details. Experimental results with our prototype suggest that Votegral is practical and sufficiently scalable for real-world elections. User-visible latency of credential issuance in TRIP is at most 19.7 seconds even on resource-constrained kiosk hardware, making it suitable for registration at remote locations or on battery power. A companion usability study indicates that TRIP’s usability is competitive with other e-voting systems including some lacking coercion resistance, and formal proofs support TRIP’s combination of coercion-resistance and verifiability.",
       "tags": [
         "Cryptography",
         "Systems",
         "Electronic voting"
       ],
-      "bibtex": "@inproceedings{merino2025trip,\n  title={TRIP: Coercion-resistant Registration for E-Voting with Verifiability and Usability in Votegral},\n  author={Merino, Louis-Henri and Colombo, Simone and Reyes, Rene and Azhir, Alaleh and Mishra, Shailesh and Tennage, Pasindu and Raeisi, Mohammad Amin and Zhang, Haoqian and Allen, Jeff R. and Tellenbach, Bernhard and Estrada-Galiñanes, Vero and Ford, Bryan},\n  booktitle={Proceedings of the ACM SIGOPS 31st Symposium on Operating Systems Principles},\n  year={2025},\n  doi={10.1145/3731569.3764837},\n  url={https://doi.org/10.1145/3731569.3764837}\n}"
+      "bibtex": "@inproceedings{merino2025trip,\n  title={TRIP: Coercion-resistant Registration for E-Voting with Verifiability and Usability in Votegral},\n  author={Merino, Louis-Henri and Colombo, Simone and Reyes, Rene and Azhir, Alaleh and Mishra, Shailesh and Tennage, Pasindu and Raeisi, Mohammad Amin and Zhang, Haoqian and Allen, Jeff R. and Tellenbach, Bernhard and Estrada-Galiñanes, Vero and Ford, Bryan},\n  booktitle={Proceedings of the ACM SIGOPS 31st Symposium on Operating Systems Principles},\n  year={2025},\n  doi={10.1145/3731569.3764837},\n  url={https://doi.org/10.1145/3731569.3764837}\n}",
+      "abstractSourceUrl": "https://www.cydcampus.admin.ch/dam/en/sd-web/zfXK8IOdglF5/3731569.3764837.pdf"
     },
     {
       "id": "directed-densest-subgraph",
@@ -98,8 +100,8 @@
       "preprintUrl": "https://arxiv.org/abs/2509.21729",
       "slidesUrl": "https://neurips.cc/media/neurips-2025/Slides/117319.pdf",
       "sourceUrl": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/3368e8f592b0d46ed85def795fd5168f-Abstract-Conference.html",
-      "abstractType": "summary",
-      "abstract": "This work develops approximation algorithms for finding dense regions of large directed graphs under parallel and streaming memory constraints. In the massively parallel model, it obtains a (2 + ε)-approximation in roughly √log n rounds using sublinear memory on each machine. In the semi-streaming model, a deterministic single-pass algorithm achieves an O(log n)-approximation and also gives an insertion-only dynamic algorithm with O(log² n) worst-case update time. Experiments show stronger practical approximation quality than the worst-case streaming bound and fewer parallel rounds than previous approaches.",
+      "abstractType": "full",
+      "abstract": "Finding dense subgraphs is a fundamental problem with applications to community detection, clustering, and data mining. Our work focuses on finding approximate densest subgraphs in directed graphs in computational models for processing massive data. We consider two such models: Massively Parallel Computation (MPC) and semi-streaming. We show how to find a $(2 + \\varepsilon)$-approximation in $\\tilde{O}(\\sqrt{\\log n})$ MPC rounds with sublinear memory per machine. This improves the state-of-the-art results by Bahmani et al. [BGM14, WAW 2014] and Mitrović & Pan [MP24, ICML 2024]. Moreover, we show how to find an $O(\\log n)$-approximation in a single pass in semi-streaming. This is in stark contrast to prior work, which implies $\\tilde{\\Omega}(n^{1/6})$ approximation for a single pass; a better approximation is known only for randomized streams (Mitrović & Pan). This is the first deterministic single-pass semi-streaming algorithm for the densest subgraph problem, both for undirected and directed graphs. Our semi-streaming approach is also an insertion-only dynamic algorithm, attaining the first directed densest subgraph algorithm with $O(\\log^2 n)$ worst-case update time while using sub-linear memory. We empirically evaluate our approaches in two ways. First, we illustrate that our single-pass semi-streaming algorithm performs much better than the theoretical guarantee. Specifically, its approximation on temporal datasets matches the $(2 + \\varepsilon)$-approximation of an $O(\\log n)$-pass algorithm by Bahmani et al. [BKV12, VLDB 2012]. Second, we demonstrate that our MPC algorithm requires fewer rounds than prior work.",
       "tags": [
         "Algorithms",
         "Graph mining",
@@ -112,7 +114,8 @@
         "Mohammad Amin Raeisi"
       ],
       "contributionNote": "Equal contribution, alphabetical order.",
-      "bibtex": "@inproceedings{mitrovic2025directed,\n  title={New Parallel and Streaming Algorithms for Directed Densest Subgraph},\n  author={Mitrović, Slobodan and Pan, Theodore and Qaempanah, Mahdi and Raeisi, Mohammad Amin},\n  booktitle={Advances in Neural Information Processing Systems},\n  volume={38},\n  year={2025},\n  doi={10.52202/085713-1209},\n  url={https://proceedings.neurips.cc/paper_files/paper/2025/hash/3368e8f592b0d46ed85def795fd5168f-Abstract-Conference.html}\n}"
+      "bibtex": "@inproceedings{mitrovic2025directed,\n  title={New Parallel and Streaming Algorithms for Directed Densest Subgraph},\n  author={Mitrović, Slobodan and Pan, Theodore and Qaempanah, Mahdi and Raeisi, Mohammad Amin},\n  booktitle={Advances in Neural Information Processing Systems},\n  volume={38},\n  year={2025},\n  doi={10.52202/085713-1209},\n  url={https://proceedings.neurips.cc/paper_files/paper/2025/hash/3368e8f592b0d46ed85def795fd5168f-Abstract-Conference.html}\n}",
+      "abstractSourceUrl": "https://proceedings.neurips.cc/paper_files/paper/2025/file/3368e8f592b0d46ed85def795fd5168f-Paper-Conference.pdf"
     },
     {
       "id": "lai-massey",
@@ -125,11 +128,11 @@
       "venue": "IACR Communications in Cryptology, 1(4)",
       "status": "Published",
       "paperUrl": "https://cic.iacr.org/p/1/4/23",
-      "pdfUrl": "https://eprint.iacr.org/2023/1834.pdf",
+      "pdfUrl": "https://cic.iacr.org/p/1/4/23/pdf",
       "preprintUrl": "https://eprint.iacr.org/2023/1834",
       "sourceUrl": "https://cic.iacr.org/p/1/4/23",
-      "abstractType": "summary",
-      "abstract": "Lai–Massey networks are a classical block-cipher construction whose provable security has received less attention than Feistel and substitution–permutation designs. This paper studies their beyond-birthday-bound pseudorandom-permutation security when round functions are independent and random, against chosen-plaintext attacks. It establishes a tight round threshold: five rounds suffice for security beyond the birthday bound, and fewer rounds do not.",
+      "abstractType": "full",
+      "abstract": "In spite of being a popular technique for designing block ciphers, Lai-Massey networks have received considerably less attention from a security analysis point of view than Feistel networks and Substitution-Permutation networks. In this paper we study the beyond-birthday-bound (BBB) security of Lai-Massey networks with independent random round functions against chosen-plaintext adversaries. Concretely, we show that five rounds are necessary and sufficient to achieve BBB security.",
       "tags": [
         "Cryptography",
         "Symmetric cryptography",
@@ -140,7 +143,8 @@
         "Mohammad Amin Raeisi"
       ],
       "contributionNote": "Co-first authors, alphabetical order.",
-      "bibtex": "@article{bhaumik2024laimassey,\n  title={Building a BBB Pseudorandom Permutation using Lai-Massey Networks},\n  author={Bhaumik, Ritam and Raeisi, Mohammad Amin},\n  journal={IACR Communications in Cryptology},\n  volume={1},\n  number={4},\n  year={2024},\n  doi={10.62056/A0WAHEY6B},\n  url={https://cic.iacr.org/p/1/4/23}\n}"
+      "bibtex": "@article{bhaumik2024laimassey,\n  title={Building a BBB Pseudorandom Permutation using Lai-Massey Networks},\n  author={Bhaumik, Ritam and Raeisi, Mohammad Amin},\n  journal={IACR Communications in Cryptology},\n  volume={1},\n  number={4},\n  year={2024},\n  doi={10.62056/A0WAHEY6B},\n  url={https://cic.iacr.org/p/1/4/23}\n}",
+      "abstractSourceUrl": "https://cic.iacr.org/p/1/4/23/pdf"
     }
   ]
 }

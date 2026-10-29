@@ -204,7 +204,12 @@ nav a[aria-current] { color: var(--accent); border-color: var(--accent); }
 details[open] .expand-symbol:after { transform: rotate(0); }
 .abstract { padding: 13px 0 2px 20px; border-left: 2px solid var(--line); margin-top: 13px; color: var(--muted); font-size: 16px; line-height: 1.85; }
 .abstract-note { font-size: 12px; }
+.abstract math { font-size: 1.05em; }
 .empty-state { padding: 40px 0; color: var(--muted); font-size: 16px; }
+
+.misc-placeholder { min-height: calc(100svh - 94px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; }
+.misc-placeholder h1 { font-size: clamp(72px, 12vw, 132px); font-weight: 600; letter-spacing: .08em; line-height: 1; padding-left: .08em; }
+.tbd-clock { width: 104px; height: 104px; color: var(--accent); }
 
 /* Curriculum vitae and teaching. */
 .cv-page { padding: 28px 0 20px; }
@@ -260,6 +265,8 @@ details[open] .expand-symbol:after { transform: rotate(0); }
 }
 
 @media (max-width: 720px) {
+  .misc-placeholder { min-height: calc(100svh - 78px); }
+  .tbd-clock { width: 84px; height: 84px; }
   .site-wrap { padding: 0 24px; }
   .site-header { height: 78px; position: relative; flex-wrap: wrap; gap: 15px; }
   .wordmark { font-size: 16px; }
