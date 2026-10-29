@@ -1,6 +1,6 @@
 # Mohammad Amin Raeisi — personal homepage
 
-A dark academic homepage for **aminra81.github.io**, with About, Publications, CV, and Misc pages. Plain HTML, CSS, and JavaScript; no package installation or framework is required. This version is being proposed on a draft branch, so it does not change the live site until merged and deployed.
+A dark navy academic homepage for **aminra81.github.io**, with About, Publications, CV, and Misc pages. The About page contains a few biographical paragraphs, profile links, and the photograph at its original proportions. Plain HTML, CSS, and JavaScript; no package installation or framework is required.
 
 ## Edit the content
 
@@ -28,11 +28,11 @@ node scripts/serve.mjs
 
 Open `http://localhost:4173`. Stop the server with Ctrl+C.
 
-## Publish when ready
+## Publish updates
 
-Review the draft pull request and merge it into `master` when you want the redesign to go live. In the repository’s **Settings → Pages**, select **Deploy from a branch**, the `master` branch, and **/ (root)** if that is not already the selected source. `.nojekyll` makes GitHub Pages serve the plain static pages. The public address is `https://aminra81.github.io/`.
+Push checked changes to `master` to update the live site. In the repository’s **Settings → Pages**, the publishing source is **Deploy from a branch**, the `master` branch, and **/ (root)**. `.nojekyll` makes GitHub Pages serve the plain static pages. The public address is `https://aminra81.github.io/`.
 
-The previous Academic Pages/Jekyll files are preserved in the repository history and in this draft’s base tree. The new static homepage uses its own HTML and assets.
+The previous Academic Pages/Jekyll files are preserved in the repository history and source tree. The static homepage uses its own HTML and assets.
 
 ## Notes
 
@@ -40,4 +40,4 @@ Publication metadata was checked against primary paper sources on 2026-10-29. Ex
 
 The CV PDF was compiled from the current Overleaf resume, including the Yale Teaching Fellow entry. The website’s LaTeX copy uses an equivalent TeX accent for the character ć to ensure it renders with the local compiler. The original Overleaf source is maintained separately.
 
-Typography uses DM Sans and Manrope from Google Fonts with system fallbacks, plus the locally available Georgia serif. There are no analytics, cookies, external JavaScript libraries, or backend services.
+Typography uses Roboto and Roboto Mono from Google Fonts with system fallbacks. The browser icon is Yale’s official 96×96 favicon, sourced from `https://www.yale.edu/sites/all/themes/yale_blue/images/favicons/favicon-96x96.png`. There are no analytics, cookies, external JavaScript libraries, or backend services.

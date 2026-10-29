@@ -12,8 +12,9 @@
   "description": "Mohammad Amin Raeisi is a Computer Science Ph.D. student at Yale working on cryptography, security, and trustworthy AI.",
   "intro": "I study cryptography and security, with a particular interest in making AI systems private, verifiable, and trustworthy.",
   "bio": [
-    "I’m a Ph.D. student in Computer Science at Yale University. My research interests span proof systems, post-quantum cryptography, cryptography for AI, and system security.",
-    "Before Yale, I received my B.Sc. in Computer Science from Sharif University of Technology. Along the way, I’ve worked with researchers at EPFL, the University of California, Davis, and the University of Maryland."
+    "Hi, I’m Amin. I’m a Ph.D. student in Computer Science at Yale University, working on cryptography and security.",
+    "I’m interested in proof systems, post-quantum cryptography, and cryptography for AI. My research interests also include private and verifiable machine learning, LLM safety, and parallel and streaming algorithms.",
+    "Before joining Yale, I earned my B.Sc. in Computer Science at Sharif University of Technology. I’ve also worked with researchers at EPFL, the University of California, Davis, and the University of Maryland."
   ],
   "interests": [
     {"title": "Cryptography", "text": "Proof systems, post-quantum cryptography, and cryptography for AI."},

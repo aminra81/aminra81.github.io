@@ -24,7 +24,8 @@ for(const page of pages){
   for(const [,raw] of html.matchAll(/(?:href|src|data)="([^"]+)"/g)){
     const url=raw.replaceAll('&amp;','&');
     if(/^(https?:|mailto:)/.test(url))continue;
-    const [file,hash]=url.split('#');
+    const [resource,hash]=url.split('#');
+    const file=resource.split('?')[0];
     const target=file||page;
     await access(path.join(root,target));
     if(hash&&target.endsWith('.html'))assert((await read(target)).includes(`id="${hash}"`),`Broken fragment ${url} in ${page}`);

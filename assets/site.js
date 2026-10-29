@@ -16,7 +16,7 @@ document.addEventListener('keydown', event => {
     menuButton.focus();
   }
 });
-window.matchMedia('(min-width: 651px)').addEventListener('change', closeMenu);
+window.matchMedia('(min-width: 721px)').addEventListener('change', closeMenu);
 
 const paperSearch = document.querySelector('#paper-search');
 if (paperSearch) {
