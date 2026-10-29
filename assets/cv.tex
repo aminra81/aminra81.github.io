@@ -1,0 +1,257 @@
+%-------------------------
+% Resume in Latex
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\ifdefined\pdfglyphtounicode
+  \input{glyphtounicode}
+\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure PDF is machine readable
+\ifdefined\pdfgentounicode
+  \pdfgentounicode=1
+\fi
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small #3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Mohammad Amin Raeisi} \\ \vspace{1pt}
+    512 Arthur K. Watson Hall, 51 Prospect Street, New Haven, CT 06511 \\ \vspace{1pt}
+    \small
+    \raisebox{-0.1\height}\faPhone\ 203-435-3764 ~
+    \href{mailto:amin.raeisi@yale.edu}{\raisebox{-0.2\height}\faEnvelope\ \underline{amin.raeisi@yale.edu}} ~
+    \href{https://www.linkedin.com/in/mohammadaminraeisi}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/mohammadaminraeisi}} ~
+    \href{https://github.com/aminra81}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/aminra81}}
+    \vspace{-8pt}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Yale University (GPA: 4.0/4.0)}{Sep. 2025 -- Present}
+      {Ph.D. in Computer Science}{New Haven, CT}
+      \resumeItemListStart
+        \resumeItem{\textbf{Relevant Coursework:} 
+        Trustworthy Deep Learning (Ongoing)
+        Computational Biomedical Privacy (Honors), Real-World Cryptography (Honors), Advanced Topics in Cryptography (Honors), Intro to Cryptography (Honors), Zero-Knowledge Proofs (Honors), and Intro to Quantum Computing (Honors).}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Sharif University of Technology (GPA: 19.48/20)}{Sep. 2020 -- Jun. 2025}
+      {B.Sc. in Computer Science}{Tehran, Iran}
+
+  \resumeSubHeadingListEnd
+
+%-----------INTERESTS-----------
+\section{Research Interests}
+
+{\small
+\begin{tabularx}{\textwidth}{@{}p{0.02\textwidth} p{0.20\textwidth} X@{}}
+$\bullet$ & \textbf{Cryptography:} & Proof Systems, Post-Quantum Cryptography, Cryptography for AI \\[-2pt]
+$\bullet$ & \textbf{System Security:} & AI security, LLM Safety, Verifiable ML
+\end{tabularx}
+}
+\vspace{-15pt}
+
+%-----------PUBLICATIONS-----------
+\section{Publications}
+
+{\small
+\begin{enumerate}[label={[\arabic*]}, leftmargin=2.2em, itemsep=0.35em, topsep=0.2em]
+
+    \item B. Merbaum, \textbf{M. A. Raeisi$^{*}$}, W. Wang, C. Papamanthou, K. Sotiraki, F. Zhang.
+    ``Maverick: Private and Verifiable LLM Inference Made Practical via Matrix-Vector Multiplication Delegation'' (In submission) \\
+    {\footnotesize arxiv: \url{https://arxiv.org/pdf/2609.10264}.}
+
+    \item L.-H. Merino, S. Colombo, R. Reyes, A. Azhir, S. Mishra, P. Tennage, \textbf{M. A. Raeisi}, H. Zhang, J. R.~Allen, B. Tellenbach, V. Estrada-Galiñanes, B. Ford.
+    ``TRIP: Coercion-resistant Registration for E-Voting with Verifiability and Usability in Votegral.'' In: \textit{ACM SIGOPS 31st Symposium on Operating Systems Principles (SOSP)} (2025). \\
+    {\footnotesize DOI: \url{https://doi.org/10.1145/3731569.3764837}.}
+
+    \item S. Mitrovi\'{c}, T. Pan, M. Qaempanah, \textbf{M. A. Raeisi}$^{*}$.
+    ``New Parallel and Streaming Algorithms for Directed Densest Subgraph.'' In: \textit{NeurIPS} (2025). \\
+    {\footnotesize arXiv: \url{https://arxiv.org/abs/2509.21729}.}
+
+    \item R. Bhaumik, \textbf{M. A. Raeisi}$^{*}$.
+    ``Building a BBB Pseudorandom Permutation using Lai--Massey Networks.'' In: \textit{IACR Communications in Cryptology, Volume 1} (2024). \\
+    {\footnotesize ePrint: \url{https://eprint.iacr.org/2023/1834}.}
+
+\end{enumerate}
+
+\vspace{0.2em}
+{\footnotesize $^{*}$Co-first author, alphabetical order.}
+}
+\vspace{-10pt}
+
+%-----------AWARDS-----------
+\section{Honors and Awards}
+
+{\small
+\begin{itemize}[leftmargin=1.2em, itemsep=-1pt, topsep=2pt]
+    \item Yale University Ph.D. Fellowship, annual support of USD 106,288 (2025--2026)
+    \item Summer@EPFL Fellowship, CHF 5,400 (2024)
+    \item Graduate Studies Opportunity Without Entrance Exam, Sharif University of Technology (2023)
+    \item Summer@EPFL Fellowship, CHF 4,800 (2023)
+    \item Top 0.22\% among 155,250 participants, Iranian University Entrance Exam in Mathematics and Physics (2020)
+    \item Silver Medal, Iranian National Olympiad in Informatics (2019)
+    \item Silver Medal, Iranian National Olympiad in Informatics (2018)
+\end{itemize}
+}
+\vspace{-10pt}
+
+%-----------RESEARCH & INDUSTRY EXPERIENCE-----------
+\section{Research \& Industry Experience}
+  \resumeSubHeadingListStart
+
+  \resumeSubheading
+      {University of Maryland}{June. 2026 -- Aug 2026}
+      {Faculty Assistant}{Remote}
+
+    \resumeSubheading
+      {University of California, Davis}{Sep. 2024 -- May 2025}
+      {Research Collaborator -- Directed Densest Subgraph in MPC}{Remote}
+
+    \resumeSubheading
+      {École Polytechnique Fédérale de Lausanne (EPFL)}{Jun. 2024 -- Sep. 2024}
+      {Research Intern -- Coercion-Resistant Electronic Voting}{Lausanne, Switzerland}
+
+    \resumeSubheading
+      {École Polytechnique Fédérale de Lausanne (EPFL)}{Jun. 2023 -- Aug. 2023}
+      {Research Intern -- Lai--Massey Security Bounds}{Lausanne, Switzerland}
+      
+    \resumeSubheading
+      {Divar}{Jun. 2021 -- Sep. 2021}
+      {Software Engineer Intern -- Django, Docker, PostgreSQL, Kubernetes}{Tehran, Iran}
+
+  \resumeSubHeadingListEnd
+\vspace{-15pt}
+
+%-----------TEACHING EXPERIENCE-----------
+\section{Teaching Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Yale University}{}
+      {Teaching Fellow}{New Haven, CT}
+      \resumeItemListStart
+        \resumeItem{\textbf{Course:} Introduction to Cryptography.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Sharif University of Technology}{Sep. 2021 -- Jun. 2024}
+      {Teaching Assistant}{Tehran, Iran}
+      \resumeItemListStart
+        \resumeItem{\textbf{Courses:} Introduction to Cryptography, Analysis of Algorithms, Design Algorithms, Theory of Automata, Data Structures, Game Theory, Linear Algebra, Probability and Applications, Introduction to Linear Algebra, and Basic Programming.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Allame Helli 10, Farzanegan Olympiad Club, Allame Tabatabaei High School}{Jun. 2020 -- Aug. 2021}
+      {Algorithm Design Lecturer}{Tehran, Iran}
+      \resumeItemListStart
+        \resumeItem{Taught algorithms, data structures, and competitive programming to approximately 40 high-achieving high school students preparing for the International Olympiad in Informatics.}
+        \resumeItem{Students earned one international silver medal and multiple national medals.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------SERVICE-----------
+\section{Service}
+
+{\small
+\begin{itemize}[leftmargin=1.2em, itemsep=1pt, topsep=2pt]
+    \item \textbf{Sub-Reviewer}
+    \begin{itemize}[leftmargin=1.5em, label=$\circ$, itemsep=0pt, topsep=0pt]
+        \item ACM Conference on Computer and Communications Security (CCS 2026)
+        \item IACR ASIACRYPT 2026
+        \item IACR EUROCRYPT 2027
+    \end{itemize}
+
+    \item \textbf{Scientific Committee Member and Final Theoretical Exam Grader}
+    \begin{itemize}[leftmargin=1.5em, label=$\circ$, itemsep=0pt, topsep=0pt]
+        \item 32nd Iranian National Olympiad in Informatics Summer Camps (2022)
+        \item 31st Iranian National Olympiad in Informatics Summer Camps (2021)
+    \end{itemize}
+\end{itemize}
+}
+\vspace{-10pt}
+
+%-----------SKILLS-----------
+%\section{Skills}
+ %\begin{itemize}[leftmargin=0.15in, label={}]
+    %\small{\item{
+     %\textbf{Languages \& Tools}{: Python, Go, C++, Rust, Arkworks, Kyber} \\
+     %\textbf{Soft Skills}{: Presentation, Teamwork, Teaching}
+    %}}
+ %\end{itemize}
+ %\vspace{20pt}
+
+\noindent
+
+
+\end{document}

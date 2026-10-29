@@ -1,0 +1,40 @@
+{
+  "name": "Mohammad Amin Raeisi",
+  "shortName": "Amin Raeisi",
+  "role": "Ph.D. student in Computer Science",
+  "affiliation": "Yale University",
+  "location": "New Haven, Connecticut",
+  "email": "amin.raeisi@yale.edu",
+  "github": "https://github.com/aminra81",
+  "scholar": "https://scholar.google.com/citations?user=xT7peIgAAAAJ",
+  "linkedin": "https://www.linkedin.com/in/mohammadaminraeisi",
+  "siteUrl": "https://aminra81.github.io",
+  "description": "Mohammad Amin Raeisi is a Computer Science Ph.D. student at Yale working on cryptography, security, and trustworthy AI.",
+  "intro": "I study cryptography and security, with a particular interest in making AI systems private, verifiable, and trustworthy.",
+  "bio": [
+    "I’m a Ph.D. student in Computer Science at Yale University. My research interests span proof systems, post-quantum cryptography, cryptography for AI, and system security.",
+    "Before Yale, I received my B.Sc. in Computer Science from Sharif University of Technology. Along the way, I’ve worked with researchers at EPFL, the University of California, Davis, and the University of Maryland."
+  ],
+  "interests": [
+    {"title": "Cryptography", "text": "Proof systems, post-quantum cryptography, and cryptography for AI."},
+    {"title": "Trustworthy AI", "text": "Private and verifiable inference, LLM safety, and verifiable machine learning."},
+    {"title": "Algorithms & systems", "text": "Parallel and streaming graph algorithms, and secure, usable systems."}
+  ],
+  "education": [
+    {"institution": "Yale University", "degree": "Ph.D. in Computer Science", "dates": "2025 — present", "place": "New Haven, CT"},
+    {"institution": "Sharif University of Technology", "degree": "B.Sc. in Computer Science", "dates": "2020 — 2025", "place": "Tehran, Iran"}
+  ],
+  "teaching": [
+    {"institution": "Yale University", "role": "Teaching Fellow", "dates": "", "text": "Introduction to Cryptography."},
+    {"institution": "Sharif University of Technology", "role": "Teaching Assistant", "dates": "2021 — 2024", "text": "Cryptography, algorithms, data structures, automata theory, game theory, linear algebra, probability, and programming."},
+    {"institution": "High school Olympiad programs", "role": "Algorithm Design Lecturer", "dates": "2020 — 2021", "text": "Taught algorithms, data structures, and competitive programming to around 40 students preparing for the International Olympiad in Informatics."}
+  ],
+  "service": [
+    {"title": "Conference reviewing", "text": "Sub-reviewer for ACM CCS 2026, IACR ASIACRYPT 2026, and IACR EUROCRYPT 2027."},
+    {"title": "Informatics Olympiad", "text": "Scientific committee member and final theoretical exam grader for the 31st and 32nd Iranian National Olympiad in Informatics summer camps (2021 and 2022)."}
+  ],
+  "misc": [
+    {"title": "A background in competitive programming", "text": "Algorithms have been a thread through my work, from two silver medals at the Iranian National Olympiad in Informatics (2018 and 2019) to teaching the next generation of Olympiad students."},
+    {"title": "Code & experiments", "text": "My GitHub is home to code, algorithm projects, and experiments.", "link": "https://github.com/aminra81", "linkLabel": "Explore GitHub"}
+  ]
+}

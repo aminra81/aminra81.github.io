@@ -1,0 +1,146 @@
+{
+  "profile": {
+    "name": "Mohammad Amin Raeisi",
+    "github": "https://github.com/aminra81",
+    "scholar": "https://scholar.google.com/citations?user=xT7peIgAAAAJ",
+    "scholarVerifiedFrom": "https://www.alphaxiv.org/@mohammad-amin-raeisi",
+    "linkedin": "https://www.linkedin.com/in/mohammadaminraeisi",
+    "orcid": "https://orcid.org/0009-0002-7118-8752"
+  },
+  "verifiedOn": "2026-10-29",
+  "notes": [
+    "The Google Scholar profile is explicitly linked by the matching alphaXiv profile; direct Scholar retrieval was unavailable.",
+    "The expandable abstract text below is a paraphrased summary grounded in each paper's author-provided abstract. Display it as Abstract summary, rather than as a verbatim abstract.",
+    "Maverick's In submission status and the equal-contribution notes are taken from the user's current resume. Publication titles, author lists, years and venues were checked against the linked primary sources.",
+    "The IACR article's formal volume year is 2024, even though some indexes show an online date in 2025."
+  ],
+  "publications": [
+    {
+      "id": "maverick",
+      "title": "Maverick: Private and Verifiable LLM Inference Made Practical via Matrix-Vector Multiplication Delegation",
+      "authors": [
+        "Ben Merbaum",
+        "Mohammad Amin Raeisi",
+        "Wenhao Wang",
+        "Charalampos Papamanthou",
+        "Katerina Sotiraki",
+        "Fan Zhang"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "status": "In submission",
+      "paperUrl": "https://arxiv.org/abs/2609.10264",
+      "pdfUrl": "https://arxiv.org/pdf/2609.10264",
+      "sourceUrl": "https://arxiv.org/abs/2609.10264",
+      "abstractType": "summary",
+      "abstract": "Maverick enables a resource-limited client to delegate the expensive matrix–vector operations in large language model inference while protecting inputs and checking results. Its verification protocol offers information-theoretic soundness, transparent preprocessing, efficient batch checks, and negligible added server work. LPN-based pseudorandom masks provide input privacy. An end-to-end Qwen3-4B prototype measures the resulting throughput gains across client configurations. With one client thread, the reported speedups over local inference reach 17× with online mask generation, 45× with precomputed masks, and 44× for verification alone.",
+      "tags": [
+        "Cryptography",
+        "AI",
+        "Verifiable computation"
+      ],
+      "equalContribution": [
+        "Ben Merbaum",
+        "Mohammad Amin Raeisi"
+      ],
+      "contributionNote": "Co-first authors, alphabetical order.",
+      "bibtex": "@misc{merbaum2026maverick,\n  title={Maverick: Private and Verifiable LLM Inference Made Practical via Matrix-Vector Multiplication Delegation},\n  author={Merbaum, Ben and Raeisi, Mohammad Amin and Wang, Wenhao and Papamanthou, Charalampos and Sotiraki, Katerina and Zhang, Fan},\n  year={2026},\n  eprint={2609.10264},\n  archivePrefix={arXiv},\n  primaryClass={cs.CR},\n  url={https://arxiv.org/abs/2609.10264}\n}"
+    },
+    {
+      "id": "trip",
+      "title": "TRIP: Coercion-resistant Registration for E-Voting with Verifiability and Usability in Votegral",
+      "authors": [
+        "Louis-Henri Merino",
+        "Simone Colombo",
+        "Rene Reyes",
+        "Alaleh Azhir",
+        "Shailesh Mishra",
+        "Pasindu Tennage",
+        "Mohammad Amin Raeisi",
+        "Haoqian Zhang",
+        "Jeff R. Allen",
+        "Bernhard Tellenbach",
+        "Vero Estrada-Galiñanes",
+        "Bryan Ford"
+      ],
+      "year": 2025,
+      "venue": "SOSP 2025",
+      "venueFull": "ACM SIGOPS 31st Symposium on Operating Systems Principles",
+      "status": "Published",
+      "paperUrl": "https://doi.org/10.1145/3731569.3764837",
+      "pdfUrl": "https://www.cydcampus.admin.ch/dam/en/sd-web/zfXK8IOdglF5/3731569.3764837.pdf",
+      "codeUrl": "https://github.com/dedis/votegral",
+      "sourceUrl": "https://www.cydcampus.admin.ch/dam/en/sd-web/zfXK8IOdglF5/3731569.3764837.pdf",
+      "abstractType": "summary",
+      "abstract": "TRIP is the registration component of Votegral, an online voting architecture designed to resist coercion while remaining verifiable and usable. During in-person registration, a voter privately obtains genuine and fake paper credentials from a kiosk. The voter can distinguish them inside the booth, while a coercer cannot distinguish them afterward. Interactive zero-knowledge proofs support credential verification without requiring voters to understand the cryptography. The prototype, usability study, and formal analysis examine practicality, verifiability, and coercion resistance; credential issuance takes at most 19.7 seconds on the tested resource-constrained kiosks.",
+      "tags": [
+        "Cryptography",
+        "Systems",
+        "Electronic voting"
+      ],
+      "bibtex": "@inproceedings{merino2025trip,\n  title={TRIP: Coercion-resistant Registration for E-Voting with Verifiability and Usability in Votegral},\n  author={Merino, Louis-Henri and Colombo, Simone and Reyes, Rene and Azhir, Alaleh and Mishra, Shailesh and Tennage, Pasindu and Raeisi, Mohammad Amin and Zhang, Haoqian and Allen, Jeff R. and Tellenbach, Bernhard and Estrada-Galiñanes, Vero and Ford, Bryan},\n  booktitle={Proceedings of the ACM SIGOPS 31st Symposium on Operating Systems Principles},\n  year={2025},\n  doi={10.1145/3731569.3764837},\n  url={https://doi.org/10.1145/3731569.3764837}\n}"
+    },
+    {
+      "id": "directed-densest-subgraph",
+      "title": "New Parallel and Streaming Algorithms for Directed Densest Subgraph",
+      "authors": [
+        "Slobodan Mitrović",
+        "Theodore Pan",
+        "Mahdi Qaempanah",
+        "Mohammad Amin Raeisi"
+      ],
+      "year": 2025,
+      "venue": "NeurIPS 2025",
+      "venueFull": "Advances in Neural Information Processing Systems 38",
+      "status": "Published",
+      "paperUrl": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/3368e8f592b0d46ed85def795fd5168f-Abstract-Conference.html",
+      "pdfUrl": "https://proceedings.neurips.cc/paper_files/paper/2025/file/3368e8f592b0d46ed85def795fd5168f-Paper-Conference.pdf",
+      "preprintUrl": "https://arxiv.org/abs/2509.21729",
+      "slidesUrl": "https://neurips.cc/media/neurips-2025/Slides/117319.pdf",
+      "sourceUrl": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/3368e8f592b0d46ed85def795fd5168f-Abstract-Conference.html",
+      "abstractType": "summary",
+      "abstract": "This work develops approximation algorithms for finding dense regions of large directed graphs under parallel and streaming memory constraints. In the massively parallel model, it obtains a (2 + ε)-approximation in roughly √log n rounds using sublinear memory on each machine. In the semi-streaming model, a deterministic single-pass algorithm achieves an O(log n)-approximation and also gives an insertion-only dynamic algorithm with O(log² n) worst-case update time. Experiments show stronger practical approximation quality than the worst-case streaming bound and fewer parallel rounds than previous approaches.",
+      "tags": [
+        "Algorithms",
+        "Graph mining",
+        "Parallel and streaming"
+      ],
+      "equalContribution": [
+        "Slobodan Mitrović",
+        "Theodore Pan",
+        "Mahdi Qaempanah",
+        "Mohammad Amin Raeisi"
+      ],
+      "contributionNote": "Equal contribution, alphabetical order.",
+      "bibtex": "@inproceedings{mitrovic2025directed,\n  title={New Parallel and Streaming Algorithms for Directed Densest Subgraph},\n  author={Mitrović, Slobodan and Pan, Theodore and Qaempanah, Mahdi and Raeisi, Mohammad Amin},\n  booktitle={Advances in Neural Information Processing Systems},\n  volume={38},\n  year={2025},\n  doi={10.52202/085713-1209},\n  url={https://proceedings.neurips.cc/paper_files/paper/2025/hash/3368e8f592b0d46ed85def795fd5168f-Abstract-Conference.html}\n}"
+    },
+    {
+      "id": "lai-massey",
+      "title": "Building a BBB Pseudorandom Permutation using Lai-Massey Networks",
+      "authors": [
+        "Ritam Bhaumik",
+        "Mohammad Amin Raeisi"
+      ],
+      "year": 2024,
+      "venue": "IACR Communications in Cryptology, 1(4)",
+      "status": "Published",
+      "paperUrl": "https://cic.iacr.org/p/1/4/23",
+      "pdfUrl": "https://eprint.iacr.org/2023/1834.pdf",
+      "preprintUrl": "https://eprint.iacr.org/2023/1834",
+      "sourceUrl": "https://cic.iacr.org/p/1/4/23",
+      "abstractType": "summary",
+      "abstract": "Lai–Massey networks are a classical block-cipher construction whose provable security has received less attention than Feistel and substitution–permutation designs. This paper studies their beyond-birthday-bound pseudorandom-permutation security when round functions are independent and random, against chosen-plaintext attacks. It establishes a tight round threshold: five rounds suffice for security beyond the birthday bound, and fewer rounds do not.",
+      "tags": [
+        "Cryptography",
+        "Symmetric cryptography",
+        "Provable security"
+      ],
+      "equalContribution": [
+        "Ritam Bhaumik",
+        "Mohammad Amin Raeisi"
+      ],
+      "contributionNote": "Co-first authors, alphabetical order.",
+      "bibtex": "@article{bhaumik2024laimassey,\n  title={Building a BBB Pseudorandom Permutation using Lai-Massey Networks},\n  author={Bhaumik, Ritam and Raeisi, Mohammad Amin},\n  journal={IACR Communications in Cryptology},\n  volume={1},\n  number={4},\n  year={2024},\n  doi={10.62056/A0WAHEY6B},\n  url={https://cic.iacr.org/p/1/4/23}\n}"
+    }
+  ]
+}
