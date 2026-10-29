@@ -7,7 +7,7 @@ A dark navy academic homepage for **aminra81.github.io**, with About, Publicatio
 - `content/site.json`: biography, social links, education, teaching, service, and Misc entries.
 - `content/publications.json`: paper titles, authors, venues, links, abstract summaries, and BibTeX. Use `abstractType: "full"` when replacing a summary with the full author-provided abstract.
 - `assets/portrait.jpg`: profile photograph.
-- `assets/cv.pdf`: downloadable and embedded CV. `assets/cv.tex` is the corresponding editable source.
+- `assets/cv.pdf`: CV opened directly on the CV page, with one button to open the original PDF in a new tab for download. `assets/cv.tex` is the corresponding editable source.
 - `assets/style.css`: colors, typography, and responsive layout.
 - `scripts/build.mjs`: shared page markup and templates.
 
@@ -42,4 +42,4 @@ Publication metadata was checked against primary paper sources on 2026-10-29. Ex
 
 The CV PDF was compiled from the current Overleaf resume, including the Yale Teaching Fellow entry. The website’s LaTeX copy uses an equivalent TeX accent for the character ć to ensure it renders with the local compiler. The original Overleaf source is maintained separately.
 
-Typography uses Roboto and Roboto Mono from Google Fonts with system fallbacks. The browser icon is Yale’s official 96×96 favicon, sourced from `https://www.yale.edu/sites/all/themes/yale_blue/images/favicons/favicon-96x96.png`. There are no analytics, cookies, external JavaScript libraries, or backend services.
+Typography uses Roboto and Roboto Mono from Google Fonts with system fallbacks. The browser icon is Yale’s official 96×96 favicon, sourced from `https://www.yale.edu/sites/all/themes/yale_blue/images/favicons/favicon-96x96.png`. The CV page renders the PDF using locally hosted PDF.js 6.4.299 from the official `pdfjs-dist` npm package; its Apache 2.0 license is included under `assets/vendor/pdfjs/`. There are no analytics, cookies, remotely loaded JavaScript libraries, or backend services.

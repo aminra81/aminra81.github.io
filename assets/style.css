@@ -207,6 +207,13 @@ details[open] .expand-symbol:after { transform: rotate(0); }
 .empty-state { padding: 40px 0; color: var(--muted); font-size: 16px; }
 
 /* Curriculum vitae and teaching. */
+.cv-page { padding: 28px 0 20px; }
+.cv-actions { display: flex; justify-content: flex-end; margin-bottom: 18px; }
+.cv-page .pdf-viewer { height: calc(100dvh - 210px); min-height: 480px; }
+.cv-page .cv-document { display: grid; gap: 18px; padding: 18px; }
+.cv-page .cv-document:empty { min-height: 480px; }
+.pdf-page { position: relative; width: 100%; max-width: 850px; margin: auto; background: white; }
+.pdf-page canvas { display: block; width: 100%; height: auto; }
 .cv-intro { display: flex; align-items: center; justify-content: space-between; gap: 35px; }
 .cv-intro .button { white-space: nowrap; margin-top: 24px; }
 .cv-overview { border-top: 1px solid var(--line); padding: 32px 0 37px; display: grid; grid-template-columns: 1fr 3fr; gap: 35px; }
