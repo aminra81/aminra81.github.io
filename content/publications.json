@@ -41,7 +41,8 @@
       ],
       "equalContribution": [
         "Ben Merbaum",
-        "Mohammad Amin Raeisi"
+        "Mohammad Amin Raeisi",
+        "Wenhao Wang"
       ],
       "contributionNote": "Co-first authors, alphabetical order.",
       "bibtex": "@misc{merbaum2026maverick,\n  title={Maverick: Private and Verifiable LLM Inference Made Practical via Matrix-Vector Multiplication Delegation},\n  author={Merbaum, Ben and Raeisi, Mohammad Amin and Wang, Wenhao and Papamanthou, Charalampos and Sotiraki, Katerina and Zhang, Fan},\n  year={2026},\n  eprint={2609.10264},\n  archivePrefix={arXiv},\n  primaryClass={cs.CR},\n  url={https://arxiv.org/abs/2609.10264}\n}",
