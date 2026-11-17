@@ -17,6 +17,15 @@
     "Before joining Yale, I earned my B.Sc. in Computer Science at [Sharif University of Technology](https://en.sharif.edu/) and worked with researchers at EPFL, UC Davis, and the University of Maryland during my research explorations.",
     "I’m always eager to connect and talk about cryptography, AI security, and safety. I’d love to explore potential collaborations and, more importantly, get to know people who share these interests and have good conversations. Please feel free to reach out!"
   ],
+  "talks": [
+    {
+      "paperId": "maverick",
+      "venues": [
+        {"name": "University of Maryland, Cryptography Seminar", "season": "Fall 2026", "remote": true},
+        {"name": "Brown University, Cryptography Reading Group", "season": "Fall 2026"}
+      ]
+    }
+  ],
   "interests": [
     {"title": "Cryptography", "text": "Proof systems, post-quantum cryptography, and cryptography for AI."},
     {"title": "Trustworthy AI", "text": "Private and verifiable inference, LLM safety, and verifiable machine learning."},

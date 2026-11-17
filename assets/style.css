@@ -115,6 +115,16 @@ nav a[aria-current] { color: var(--accent); border-color: var(--accent); }
 }
 .social-links a:hover { border-color: var(--accent); }
 .social-links a > span[aria-hidden] { color: var(--muted); font-size: 13px; }
+.home-talks { margin-top: 31px; padding-top: 24px; border-top: 1px solid var(--line); }
+.home-talks h2 { margin-bottom: 12px; font-size: 19px; font-weight: 600; }
+.talk-group + .talk-group { margin-top: 22px; }
+.talk-paper { font-size: 16px; line-height: 1.6; }
+.talk-paper a { color: var(--accent); text-decoration: underline; text-decoration-color: #8b734e; text-underline-offset: 4px; }
+.talk-paper a:hover { text-decoration-color: var(--accent); }
+.talk-venues { list-style: none; padding: 0; margin: 13px 0 0; }
+.talk-venues li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 18px; font-size: 14px; line-height: 1.65; }
+.talk-venues li + li { margin-top: 8px; }
+.talk-date { color: var(--muted); font-size: 12px; white-space: nowrap; }
 .profile-photo img {
   width: 100%;
   height: auto;
@@ -283,6 +293,9 @@ details[open] .expand-symbol:after { transform: rotate(0); }
   .biography p + p { margin-top: 23px; }
   .social-links { gap: 9px; margin-top: 28px; }
   .social-links a { font-size: 13px; padding: 9px 14px; }
+  .home-talks { margin-top: 28px; padding-top: 22px; }
+  .talk-venues li { display: block; }
+  .talk-date { display: block; margin-top: 2px; }
   .profile-sidebar { max-width: 320px; width: 100%; }
   .page-intro { padding: 40px 0 34px; }
   .page-intro h1 { font-size: 37px; margin: 15px 0; overflow-wrap: anywhere; }
