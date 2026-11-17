@@ -2,6 +2,13 @@
 if (location.pathname.endsWith('/index.html')) {
   history.replaceState(null, '', location.pathname.slice(0, -10) + location.search + location.hash);
 }
+if (location.pathname === '/') {
+  const followOldTalksLink = () => {
+    if (location.hash === '#talks-title') location.replace('/talks/' + location.search);
+  };
+  followOldTalksLink();
+  window.addEventListener('hashchange', followOldTalksLink);
+}
 document.documentElement.classList.add('js');
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#navigation');

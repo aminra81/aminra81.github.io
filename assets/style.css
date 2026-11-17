@@ -115,16 +115,6 @@ nav a[aria-current] { color: var(--accent); border-color: var(--accent); }
 }
 .social-links a:hover { border-color: var(--accent); }
 .social-links a > span[aria-hidden] { color: var(--muted); font-size: 13px; }
-.home-talks { margin-top: 31px; padding-top: 24px; border-top: 1px solid var(--line); }
-.home-talks h2 { margin-bottom: 12px; font-size: 19px; font-weight: 600; }
-.talk-group + .talk-group { margin-top: 22px; }
-.talk-paper { font-size: 16px; line-height: 1.6; }
-.talk-paper a { color: var(--accent); text-decoration: underline; text-decoration-color: #8b734e; text-underline-offset: 4px; }
-.talk-paper a:hover { text-decoration-color: var(--accent); }
-.talk-venues { list-style: none; padding: 0; margin: 13px 0 0; }
-.talk-venues li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 18px; font-size: 14px; line-height: 1.65; }
-.talk-venues li + li { margin-top: 8px; }
-.talk-date { color: var(--muted); font-size: 12px; white-space: nowrap; }
 .profile-photo img {
   width: 100%;
   height: auto;
@@ -145,6 +135,17 @@ nav a[aria-current] { color: var(--accent); border-color: var(--accent); }
 .page-intro h1 { font-size: 44px; font-weight: 700; letter-spacing: -.8px; margin: 16px 0; }
 .page-intro > p:not(.eyebrow), .page-intro > div > p:not(.eyebrow) { color: var(--muted); font-size: 18px; }
 .accent { color: var(--accent); }
+
+/* Talks */
+[data-page="talks"] .site-wrap { min-height: 100svh; display: flex; flex-direction: column; }
+[data-page="talks"] main { flex: 1; padding-bottom: 48px; }
+.talk-group { border-top: 1px solid var(--line); padding: 28px 0; }
+.talk-group h2 { max-width: 54ch; font-size: clamp(21px, 2.4vw, 27px); line-height: 1.45; }
+.talk-group h2 a { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 5px; }
+.talk-group h2 a:hover { text-decoration-color: var(--accent); }
+.talk-venues { max-width: 760px; list-style: none; padding: 0; margin: 24px 0 0; }
+.talk-venues li { display: flex; justify-content: space-between; align-items: baseline; gap: 4px 24px; padding: 9px 0; font-size: 16px; }
+.talk-date { color: var(--muted); font-family: var(--mono); font-size: 13px; white-space: nowrap; }
 .text-link { display: inline-flex; gap: 12px; align-items: center; font-size: 14px; color: var(--accent); }
 .text-link:hover { text-decoration: underline; text-underline-offset: 5px; }
 .page-intro .text-link { margin-top: 19px; }
@@ -285,7 +286,7 @@ details[open] .expand-symbol:after { transform: rotate(0); }
   .js nav { display: none; position: absolute; top: 77px; left: -24px; right: -24px; z-index: 5; padding: 18px 24px; justify-content: space-between; gap: 14px; background: var(--surface); border-bottom: 1px solid var(--line); font-size: 14px; }
   .js nav.is-open { display: flex; }
   html:not(.js) .site-header { height: auto; min-height: 110px; padding: 16px 0; gap: 8px; }
-  html:not(.js) nav { width: 100%; gap: 23px; font-size: 14px; }
+  html:not(.js) nav { width: 100%; gap: 8px 16px; flex-wrap: wrap; font-size: 14px; }
   .about-page { grid-template-columns: 1fr; padding: 40px 0 45px; gap: 37px; }
   .about-copy h1 { font-size: 36px; letter-spacing: -.7px; margin-bottom: 20px; }
   .role-line { font-size: 15px; margin-bottom: 25px; }
@@ -293,7 +294,6 @@ details[open] .expand-symbol:after { transform: rotate(0); }
   .biography p + p { margin-top: 23px; }
   .social-links { gap: 9px; margin-top: 28px; }
   .social-links a { font-size: 13px; padding: 9px 14px; }
-  .home-talks { margin-top: 28px; padding-top: 22px; }
   .talk-venues li { display: block; }
   .talk-date { display: block; margin-top: 2px; }
   .profile-sidebar { max-width: 320px; width: 100%; }

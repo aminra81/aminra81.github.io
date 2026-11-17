@@ -14,11 +14,12 @@ for(const p of papers){
   assert(new URL(p.pdfUrl).protocol==='https:',`Invalid PDF URL: ${p.id}`);
   assert((await read(`assets/bib/${p.id}.bib`)).startsWith('@'),`Invalid BibTeX: ${p.id}`);
 }
-const pages=[['index.html','/'],['publications/index.html','/publications/'],['cv/index.html','/cv/'],['misc/index.html','/misc/']];
+const pages=[['index.html','/'],['publications/index.html','/publications/'],['talks/index.html','/talks/'],['cv/index.html','/cv/'],['misc/index.html','/misc/']];
 for(const [page,route] of pages){
   const html=await read(page);
   assert.equal((html.match(/<h1[ >]/g)||[]).length,1,`Expected one h1: ${page}`);
-  assert(html.includes('aria-current="page"'),`Missing active navigation: ${page}`);
+  assert(html.includes(`href="${route}" aria-current="page"`),`Incorrect active navigation: ${page}`);
+  assert.match(html, /<a href="\/talks\/"[^>]*>Talks<\/a>/, `Missing Talks navigation: ${page}`);
   const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
   assert.equal(ids.length,new Set(ids).size,`Duplicate IDs: ${page}`);
   for(const [,raw] of html.matchAll(/(?:href|src|data)="([^"]+)"/g)){

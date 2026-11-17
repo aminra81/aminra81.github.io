@@ -1,10 +1,10 @@
 # Mohammad Amin Raeisi — personal homepage
 
-A dark navy academic homepage for **aminra81.github.io**, with About, Publications, CV, and Misc pages. The About page contains a few biographical paragraphs, profile links, and the photograph at its original proportions. Plain HTML, CSS, and JavaScript; no package installation or framework is required.
+A dark navy academic homepage for **aminra81.github.io**, with About, Publications, Talks, CV, and Misc pages. The About page contains a few biographical paragraphs, profile links, and the photograph at its original proportions. Plain HTML, CSS, and JavaScript; no package installation or framework is required.
 
 ## Edit the content
 
-- `content/site.json`: biography, social links, education, teaching, service, and Misc entries.
+- `content/site.json`: biography, social links, talks and their venues, education, teaching, service, and Misc entries.
 - `content/publications.json`: paper titles, authors, venues, links, original abstracts, and BibTeX. Mathematical expressions are stored as TeX between `$` delimiters and rendered as native MathML. `abstractSourceUrl` records the source PDF for each abstract.
 - `assets/portrait.jpg`: profile photograph.
 - `assets/cv.pdf`: CV opened directly on the CV page, with one button to open the original PDF in a new tab for download. `assets/cv.tex` is the corresponding editable source.
@@ -20,7 +20,7 @@ node scripts/check.mjs
 
 Commit the regenerated HTML and bibliography with the content edits. GitHub Pages can serve the committed files directly. The website still works without JavaScript; JavaScript adds publication search, topic filters, and the mobile menu.
 
-The public routes are `/`, `/publications/`, `/cv/`, and `/misc/`. Each section is served by an `index.html` inside its directory. The old `/publications.html`, `/cv.html`, and `/misc.html` URLs redirect to the corresponding clean routes and retain query strings and paper anchors. Explicit `index.html` visits are normalized in the address bar by the shared script.
+The public routes are `/`, `/publications/`, `/talks/`, `/cv/`, and `/misc/`. Each section is served by an `index.html` inside its directory. The old `/publications.html`, `/cv.html`, and `/misc.html` URLs redirect to the corresponding clean routes and retain query strings and paper anchors. Explicit `index.html` visits are normalized in the address bar by the shared script.
 
 ## Preview locally
 

@@ -59,7 +59,7 @@ const paperCard = (p, compact = false) => `<article class="paper${compact ? ' pa
 </article>`;
 
 function layout(page, title, content) {
-  const items = [['about', '/', 'About'], ['publications','/publications/','Publications'], ['cv','/cv/','CV'], ['misc','/misc/','Misc']];
+  const items = [['about', '/', 'About'], ['publications','/publications/','Publications'], ['talks','/talks/','Talks'], ['cv','/cv/','CV'], ['misc','/misc/','Misc']];
   const canonical = new URL(items.find(i => i[0] === page)[1], site.siteUrl).href;
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -73,13 +73,13 @@ function layout(page, title, content) {
 ${['cv', 'misc'].includes(page) ? '' : `<footer class="site-footer"><p>© 2026 ${esc(site.name)}<span>${esc(site.affiliation)} · New Haven, CT</span></p><a href="mailto:${esc(site.email)}">Let’s get in touch ${arrow}</a><a class="back-top" href="#main">Back to top <span aria-hidden="true">↑</span></a></footer>`}</div></body></html>`.replace(/[ \t]+$/gm, '');
 }
 
-const talks = site.talks?.length ? `<section class="home-talks" aria-labelledby="talks-title"><h2 id="talks-title">Talks</h2>${site.talks.map(talk => {
+const talks = `<header class="page-intro"><h1 id="talks-title">Talks<span class="accent">.</span></h1></header>${site.talks.map(talk => {
   const paper = papers.find(p => p.id === talk.paperId);
   if (!paper) throw new Error('Unknown talk publication: ' + talk.paperId);
-  return `<div class="talk-group"><p class="talk-paper"><a href="/publications/#${esc(paper.id)}">${esc(paper.title)}</a></p><ul class="talk-venues">${talk.venues.map(venue => `<li><span>${esc(venue.name)}</span><span class="talk-date">${esc(venue.season)}${venue.remote ? ' · Remote' : ''}</span></li>`).join('')}</ul></div>`;
-}).join('')}</section>` : '';
+  return `<article class="talk-group"><h2><a href="/publications/#${esc(paper.id)}">${esc(paper.title)}</a></h2><ul class="talk-venues">${talk.venues.map(venue => `<li><span>${esc(venue.name)}</span><span class="talk-date">${esc(venue.season)}${venue.remote ? ' · Remote' : ''}</span></li>`).join('')}</ul></article>`;
+}).join('')}`;
 
-const intro = `<section class="about-page" aria-labelledby="name"><div class="about-copy"><h1 id="name">${esc(site.name)}</h1><p class="role-line">Ph.D. student · Computer Science<br><a href="https://www.yale.edu/" target="_blank" rel="noopener noreferrer">${esc(site.affiliation)}</a></p><div class="biography">${site.bio.map(biographyParagraph).join('')}</div>${links()}${talks}</div><aside class="profile-sidebar" aria-label="Photo and contact"><figure class="profile-photo"><img src="/assets/portrait.jpg" alt="Mohammad Amin Raeisi outdoors in a mountain landscape" width="960" height="1280" fetchpriority="high"></figure><div class="profile-contact"><p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>${esc(site.location)}</span></p><p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 6 9 7 9-7"/></svg><a href="mailto:${esc(site.email)}">${esc(site.email)}</a></p></div></aside></section>`;
+const intro = `<section class="about-page" aria-labelledby="name"><div class="about-copy"><h1 id="name">${esc(site.name)}</h1><p class="role-line">Ph.D. student · Computer Science<br><a href="https://www.yale.edu/" target="_blank" rel="noopener noreferrer">${esc(site.affiliation)}</a></p><div class="biography">${site.bio.map(biographyParagraph).join('')}</div>${links()}</div><aside class="profile-sidebar" aria-label="Photo and contact"><figure class="profile-photo"><img src="/assets/portrait.jpg" alt="Mohammad Amin Raeisi outdoors in a mountain landscape" width="960" height="1280" fetchpriority="high"></figure><div class="profile-contact"><p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>${esc(site.location)}</span></p><p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 6 9 7 9-7"/></svg><a href="mailto:${esc(site.email)}">${esc(site.email)}</a></p></div></aside></section>`;
 
 const pub = `<section class="page-intro"><p class="eyebrow">Papers & preprints</p><h1>Publications<span class="accent">.</span></h1>${external(site.scholar,'View Google Scholar','text-link')}</section>
 <section aria-label="Publication list"><div class="publication-controls" hidden data-controls><label class="search-box"><span class="sr-only">Search publications</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><input type="search" id="paper-search" placeholder="Search titles, authors, or topics…" autocomplete="off"></label><div class="filter-buttons" role="group" aria-label="Filter publications by topic"><button type="button" class="filter active" data-filter="all" aria-pressed="true">All</button>${['Cryptography','AI','Algorithms','Systems'].map(t=>`<button type="button" class="filter" data-filter="${t}" aria-pressed="false">${t}</button>`).join('')}</div></div><div class="publication-count"><p data-result-count role="status" aria-live="polite">${papers.length} publications</p><a href="/assets/publications.bib" download>Download bibliography <span aria-hidden="true">↓</span></a></div><div class="publication-list">${papers.map(p=>paperCard(p)).join('')}</div><p class="empty-state" hidden data-empty>No papers match that search. Try a different title, author, or topic.</p></section>`;
@@ -88,7 +88,7 @@ const cv = `<section class="cv-page" aria-labelledby="cv-title"><h1 id="cv-title
 
 const misc = `<section class="misc-placeholder" aria-labelledby="misc-title"><svg class="tbd-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h1 id="misc-title">TBD</h1></section>`;
 
-const pages = [['index.html','about','About',intro],['publications/index.html','publications','Publications',pub],['cv/index.html','cv','CV',cv],['misc/index.html','misc','Misc',misc]];
+const pages = [['index.html','about','About',intro],['publications/index.html','publications','Publications',pub],['talks/index.html','talks','Talks',talks],['cv/index.html','cv','CV',cv],['misc/index.html','misc','Misc',misc]];
 for (const [file, page, title, content] of pages) {
   await mkdir(path.dirname(path.join(root, file)), { recursive: true });
   await writeFile(path.join(root, file), layout(page, title, content));
@@ -111,4 +111,4 @@ function bib(p) {
 }
 for(const p of papers) await writeFile(path.join(root,`assets/bib/${p.id}.bib`),bib(p));
 await writeFile(path.join(root,'assets/publications.bib'),papers.map(bib).join('\n'));
-console.log(`Built 4 pages and ${papers.length} bibliography entries.`);
+console.log(`Built ${pages.length} pages and ${papers.length} bibliography entries.`);
